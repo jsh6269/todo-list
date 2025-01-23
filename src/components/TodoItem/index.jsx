@@ -19,8 +19,9 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
       </div>
       <div className={done ? "text text-done" : "text"}>{text}</div>
       <div
-        className="remove-icon"
-        style={{ display: isRemoveIconVisible ? "initial" : "none" }}
+        className={`remove-icon ${
+          isRemoveIconVisible ? "visible" : "invisible"
+        }`}
         onClick={() => onRemove(id)}
       >
         삭제

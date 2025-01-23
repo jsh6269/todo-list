@@ -118,20 +118,19 @@ button:focus-visible {
   flex: 1;
   font-size: 21px;
   color: #495057;
-  margin-right: 80px;
+  margin-right: 10px;
 }
 
 .text-done {
   color: #ced4da;
-  margin-right: 80px;
+  margin-right: 10px;
 }
 
 .remove-icon {
-  position: absolute;
+  margin-right: 25px;
   color: #dee2e6;
   font-size: 20px;
   cursor: pointer;
-  right: 55px;
   &:hover {
     color: #ff6b6b;
   }
