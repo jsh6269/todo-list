@@ -1,9 +1,10 @@
 import "./App.css";
+import TodoTemplate from "./components/TodoTemplate";
 
 function App() {
   return (
     <>
-      <h1 class="text-3xl font-bold underline">Todo-List</h1>
+      <TodoTemplate />
     </>
   );
 }
