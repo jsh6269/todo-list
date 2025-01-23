@@ -18,7 +18,7 @@ const TodoCreate = ({ onCreate }) => {
   return (
     <>
       {open && (
-        <div className="insert-form-positioner">
+        <div className="absolute left-0 bottom-0 w-full">
           <form className="insert-form" onSubmit={onSubmit}>
             <input
               autoFocus

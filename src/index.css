@@ -114,30 +114,16 @@ button:focus-visible {
   }
 }
 
-.list-container {
-  flex: 1;
-  padding: 20px 32px;
-  padding-bottom: 48px;
-  overflow-y: auto;
-}
-
-.item-block {
-  display: flex;
-  align-items: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
-
 .text {
   flex: 1;
   font-size: 21px;
   color: #495057;
-  margin-right: 55px;
+  margin-right: 80px;
 }
 
 .text-done {
   color: #ced4da;
-  margin-right: 55px;
+  margin-right: 80px;
 }
 
 .remove-icon {
@@ -145,7 +131,7 @@ button:focus-visible {
   color: #dee2e6;
   font-size: 20px;
   cursor: pointer;
-  right: 35px;
+  right: 55px;
   &:hover {
     color: #ff6b6b;
   }
@@ -167,13 +153,6 @@ button:focus-visible {
 .circle-done {
   border: 1px solid #38d9a9;
   color: #38d9a9;
-}
-
-.insert-form-positioner {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
 }
 
 .insert-form {
