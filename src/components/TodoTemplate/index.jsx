@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // import axios from "axios";
 import TodoHead from "../TodoHead";
 import TodoList from "../TodoList";
 import TodoCreate from "../TodoCreate";
 import DummyData from "../../data/dummy.json";
+import CalenderIcon from "../../assets/calendar.png";
 
 const TodoTemplate = () => {
   const [todos, setTodos] = useState([]);
@@ -58,11 +60,17 @@ const TodoTemplate = () => {
   };
 
   return (
-    <div className="template-container">
+    <>
       <TodoHead todos={todos} />
       <TodoList todos={todos} onToggle={onToggle} onRemove={onRemove} />
       <TodoCreate onCreate={onCreate} />
-    </div>
+      <Link to="/calendar">
+        <img
+          src={CalenderIcon}
+          className="absolute w-15 right-8 bottom-10 opacity-20 hover:opacity-100 transition-opacity duration-120"
+        />
+      </Link>
+    </>
   );
 };
 
