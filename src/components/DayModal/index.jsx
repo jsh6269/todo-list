@@ -1,9 +1,22 @@
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
-import DummyData from "../../data/dummy.json";
+import axios from "axios";
 
 const DayModal = ({ selectedDate, closeModal }) => {
+  const [todos, setTodos] = useState([]);
   const formattedDate = format(selectedDate, "yyyy-MM-dd");
-  const filteredData = DummyData.filter((item) => item.date === formattedDate);
+
+  useEffect(() => {
+    // 선택한 날짜에 맞는 todo를 서버에서 가져오기
+    axios
+      .get(`/api/todos/date/${formattedDate}`)
+      .then((response) => {
+        setTodos(response.data.todos);
+      })
+      .catch((error) => {
+        console.error("Error fetching todos:", error);
+      });
+  }, [formattedDate]);
 
   return (
     <div
@@ -15,9 +28,9 @@ const DayModal = ({ selectedDate, closeModal }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="text-lg font-semibold mb-8">{formattedDate}</h2>
-        {filteredData.length > 0 ? (
+        {todos.length > 0 ? (
           <ul>
-            {filteredData.map(({ id, text, done }) => (
+            {todos.map(({ id, text, done }) => (
               <li key={id} className="mb-2">
                 <p className="text-gray-700 flex justify-between m-4">
                   <span className="font-semibold">{text}</span>{" "}
