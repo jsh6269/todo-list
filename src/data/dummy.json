@@ -1,6 +1,8 @@
 [
-  { "id": 1, "text": "밥 먹기", "done": true },
-  { "id": 2, "text": "공부하기", "done": false },
-  { "id": 3, "text": "놀기", "done": true },
-  { "id": 4, "text": "잠자기", "done": true }
+  { "id": 1, "text": "밥 먹기", "done": true, "date": "2025-01-28" },
+  { "id": 2, "text": "공부하기", "done": false, "date": "2025-01-28" },
+  { "id": 3, "text": "놀기", "done": true, "date": "2025-01-28" },
+  { "id": 4, "text": "잠자기", "done": true, "date": "2025-01-28" },
+  { "id": 5, "text": "과거", "done": false, "date": "2025-01-26" },
+  { "id": 6, "text": "책 읽기", "done": true, "date": "2025-01-28" }
 ]

@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { MdDone, MdDelete } from "react-icons/md";
 
 const TodoItem = ({ todo, onToggle, onRemove }) => {
   const { id, text, done } = todo;

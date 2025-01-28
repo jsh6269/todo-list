@@ -6,12 +6,15 @@ import TodoList from "../TodoList";
 import TodoCreate from "../TodoCreate";
 import DummyData from "../../data/dummy.json";
 import CalenderIcon from "../../assets/calendar.png";
+import { format } from "date-fns";
 
 const TodoTemplate = () => {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    setTodos(DummyData);
+    const today = format(new Date(), "yyyy-MM-dd");
+    const todosToday = DummyData.filter((todo) => todo.date == today);
+    setTodos(todosToday);
     // axios
     //   .get("/api/todos")
     //   .then((res) => {
@@ -46,6 +49,7 @@ const TodoTemplate = () => {
       id: lastId + 1,
       text: text,
       done: false,
+      date: format(new Date(), "yyyy-MM-dd"),
     };
 
     setTodos([...todos, newTodo]);
