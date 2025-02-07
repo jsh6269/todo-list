@@ -52,11 +52,12 @@ def create_todo():
         return jsonify({"error": "Todo text is required"}), 400
 
     new_id = max(todo["id"] for todo in data) + 1 if data else 1
+    today_date = datetime.now().strftime("%Y-%m-%d")  # 현재 날짜 가져오기 (YYYY-MM-DD 형식)
     todo = {
         "id": new_id,
         "text": new_todo["text"],
         "done": False,
-        "date": new_todo.get("date", "2025-01-28"),
+        "date": new_todo.get("date", today_date),
     }
     data.append(todo)
     save_data(data)
