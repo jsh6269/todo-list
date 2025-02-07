@@ -24,6 +24,18 @@ a:hover {
   color: #535bf2;
 }
 
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("./fonts/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cafe24Supermagic";
+  src: url("./fonts/Cafe24Supermagic.ttf");
+}
+
 body {
   margin: 0;
   display: flex;
@@ -31,6 +43,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background: #e9ecef;
+  font-family: "Pretendard-Regular";
 }
 
 h1 {
@@ -91,32 +104,33 @@ button:focus-visible {
 }
 
 .head-container {
-  padding-top: 48px;
+  padding-top: 62px;
   padding-left: 32px;
   padding-right: 32px;
   padding-bottom: 24px;
   border-bottom: 1px solid #e9ecef;
   h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 42px;
     color: #343a40;
   }
   .day {
-    margin-top: 4px;
+    margin-top: 8px;
     color: #868e96;
-    font-size: 21px;
+    font-size: 18px;
   }
   .todos-left {
     color: #20c997;
     font-size: 18px;
-    margin-top: 40px;
+    margin-top: 32px;
     font-weight: bold;
+    font-family: "Cafe24Supermagic";
   }
 }
 
 .text {
   flex: 1;
-  font-size: 21px;
+  font-size: 22px;
   color: #495057;
   margin-right: 10px;
 }
@@ -137,9 +151,9 @@ button:focus-visible {
 }
 
 .check-circle {
-  width: 32px;
-  height: 32px;
-  border-radius: 16px;
+  width: 29px;
+  height: 29px;
+  border-radius: 15px;
   border: 1px solid #ced4da;
   font-size: 24px;
   display: flex;

@@ -6,7 +6,7 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
 
   return (
     <div
-      className="flex items-center py-3"
+      className="flex items-center py-3 px-5"
       onMouseOver={() => setIsRemoveIconVisible(true)}
       onMouseLeave={() => setIsRemoveIconVisible(false)}
     >
