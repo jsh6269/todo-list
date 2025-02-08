@@ -34,4 +34,7 @@ source venv/bin/activate
 
 # install depenencies
 pip install -r requirements.txt
+
+# run server
+python server/server.py
 ```
