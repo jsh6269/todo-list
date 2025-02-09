@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #e9ecef;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+  button:focus {
+    outline: none;
+  }
+}
+
+.template-container {
+  width: 512px;
+  height: 768px;
+
+  position: relative; /* 추후 박스 하단에 추가 버튼을 위치시키기 위한 설정 */
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04);
+
+  margin: 0 auto; /* 페이지 중앙에 나타나도록 설정 */
+
+  margin-top: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.head-container {
+  padding-top: 48px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9ecef;
+  h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #343a40;
+  }
+  .day {
+    margin-top: 4px;
+    color: #868e96;
+    font-size: 21px;
+  }
+  .todos-left {
+    color: #20c997;
+    font-size: 18px;
+    margin-top: 40px;
+    font-weight: bold;
+  }
+}
+
+.text {
+  flex: 1;
+  font-size: 21px;
+  color: #495057;
+  margin-right: 10px;
+}
+
+.text-done {
+  color: #ced4da;
+  margin-right: 10px;
+}
+
+.remove-icon {
+  margin-right: 25px;
+  color: #dee2e6;
+  font-size: 20px;
+  cursor: pointer;
+  &:hover {
+    color: #ff6b6b;
+  }
+}
+
+.check-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid #ced4da;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.circle-done {
+  border: 1px solid #38d9a9;
+  color: #38d9a9;
+}
+
+.insert-form {
+  background: #f8f9fa;
+  padding: 32px;
+  padding-bottom: 72px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border-top: 1px solid #e9ecef;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 18px;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  outline: none;
+}
+
+.circle-button {
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  transform: translate(-50%, 50%);
+  transition: 0.125s all ease-in;
+  background: #38d9a9;
+  z-index: 5;
+  cursor: pointer;
+
+  &:hover {
+    background: #63e6be;
+  }
+
+  &:active {
+    background: #20c997;
+  }
+}
+
+.button-open {
+  background: #ff6b6b;
+  &:hover {
+    background: #ff8787;
+  }
+  &:active {
+    background: #fa5252;
+  }
+  transform: translate(-50%, 50%) rotate(45deg);
+}
