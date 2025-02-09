@@ -1,41 +1,53 @@
 import TodoList from "../TodoList";
-import TodoDummyData from "../../data/dummy.json";
 import TodoHead from "../TodoHead";
 import TodoCreate from "../TodoCreate";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import CalenderIcon from "../../assets/calendar.png";
+import { getTodos, toggleTodoDone, deleteTodo, createTodo } from "./api";
 
 const TodoTemplate = () => {
   const [todos, setTodos] = useState([]);
 
-  const handleToggle = (id) => {
-    const newTodos = todos.map((todo) =>
-      todo.id === id ? { ...todo, done: !todo.done } : todo
-    );
-    setTodos(newTodos);
+  const fetchTodos = async () => {
+    const todoResponse = await getTodos();
+    setTodos(todoResponse);
   };
 
-  const handleRemove = (id) => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
+  const handleToggle = async (id) => {
+    try {
+      await toggleTodoDone(id);
+      const newTodos = todos.map((todo) =>
+        todo.id === id ? { ...todo, done: !todo.done } : todo
+      );
+      setTodos(newTodos);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
-  const handleCreate = (text) => {
-    const lastId = todos.length > 0 ? todos[todos.length - 1].id : 0;
+  const handleRemove = async (id) => {
+    try {
+      await deleteTodo(id);
+      const newTodos = todos.filter((todo) => todo.id !== id);
+      setTodos(newTodos);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
-    const newTodo = {
-      id: lastId + 1,
-      text: text,
-      done: false,
-    };
-
-    setTodos([...todos, newTodo]);
+  const handleCreate = async (text) => {
+    try {
+      const newTodo = await createTodo(text);
+      setTodos([...todos, newTodo]);
+    } catch (e) {
+      console.error(e);
+    }
   };
 
   useEffect(() => {
-    setTodos(TodoDummyData);
+    fetchTodos();
   }, []);
 
   return (
