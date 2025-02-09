@@ -14,6 +14,7 @@ Variant: JavaScript
 
 ```
 npm create vite@latest
+📌루트 디렉토리 안에 다시 react app을 만들지 않으려면, 'npm create vite@latest .'을 입력하면 됩니다.
 npm install tailwindcss @tailwindcss/vite
 npm install react-router-dom
 npm install date-fns
